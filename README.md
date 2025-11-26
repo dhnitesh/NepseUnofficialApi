@@ -142,3 +142,8 @@ sudo curl -A "Mozilla Chrome Safari" "https://www.ssllabs.com/ssltest/getTestCha
 3. and, finally you've to run the following command[^1] to include the added CA details into the system.  
 ``` sudo update-ca-certificates```
 [^1]: The command uses root access so first verify before carrying out the operation.
+
+
+
+docker images | grep nepseunofficialapi-nepse-api
+docker save -o nepse_api.tar nepseunofficialapi-nepse-api:latest
