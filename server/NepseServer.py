@@ -1,7 +1,7 @@
 from json import JSONDecodeError
 
 import flask
-from flask import Flask, request
+from flask import Flask, request, render_template
 
 try:
     from nepse import Nepse
@@ -42,10 +42,7 @@ routes = {
 
 @app.route("/")
 def getIndex():
-    content = "<BR>".join(
-        [f"<a href={value}> {key} </a>" for key, value in routes.items()]
-    )
-    return f"Serverving hot stock data <BR>{content}"
+    return render_template("index.html")
 
 
 @app.route(routes["Summary"])
